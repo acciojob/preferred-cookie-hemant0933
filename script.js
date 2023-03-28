@@ -5,11 +5,13 @@ var fontcolor = document.getElementById("fontcolor");
 var mycookies = document.cookie.split("; ")
 mycookies.map((item)=>{
 	var cookieList = item.split("=");
-	var myfontsize = cookieList[1];
-	var myfontcolor = cookieList[3];
-
-	fontsize.value = myfontsize;
-	fontcolor.value = myfontcolor;
+	
+	cookieList.map((para)=>{
+	fontsize.value = para[1];
+	fontcolor.value = para[3];
+		
+	})
+	
 })
 
 function onSubmit(event){
